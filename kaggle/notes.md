@@ -159,4 +159,264 @@ def count_negatives(nums):
             n_negative = n_negative + 1
     return n_negative
 ```
+output : `2`
+
+The `any() `function returns `True` if any item in an iterable are true, otherwise it returns `False`.
+
+If the iterable object is empty, the `any()`function will return `False`.
+
+Example:
+Implement a function that reproduces this behaviour, returning a list of booleans corresponding to whether the corresponding element is greater than n.
+```python
+def elementwise_greater_than(L, thresh):
+    res = []
+    for ele in L:
+        res.append(ele > thresh)
+    return res
+```
+And here's the list comprehension version:
+```python
+def elementwise_greater_than(L, thresh):
+    return [ele > thresh for ele in L]
+```
+
+## 6. Strings and Dictionaries
+
+One place where the Python language really shines is in the manipulation of strings. This section will cover some of Python's built-in string methods and formatting operations.
+
+Such string manipulation patterns come up often in the context of data science work.
+
+
+**Double quotes are convenient** if your string contains a single quote character (e.g. representing an apostrophe).
+
+Similarly, it's easy to create a string that contains double-quotes if you wrap it in single quotes:
+
+```python
+print("Pluto's a planet!")
+print('My dog is named "Pluto"')
+# we can also fix this by using a backlash
+print('Pluto\'s a planet!')
+```
+In addition, **Python's triple quote syntax** for strings lets us include newlines literally (i.e. by just hitting 'Enter' on our keyboard, rather than using the special '\n' sequence). 
+
+We've already seen this in the docstrings we use to document our functions, but we can use them anywhere we want to define a string.
+
+```python
+triplequoted_hello = """hello
+world"""
+print(triplequoted_hello)
+triplequoted_hello == hello
+```
+
+```python
+# and, we can even loop over them
+[char+'! ' for char in planet]
+```
+output: `['P! ', 'l! ', 'u! ', 't! ', 'o! ']`
+
+`str.join()` takes us in the other direction of split function **sewing a list of strings up into one long string,** using the string it was called on as a separator.
+
+```python
+'/'.join([month, day, year])
+
+# Yes, we can put unicode characters right in our string literals :)
+' 👏 '.join([word.upper() for word in words])
+```
 output : 
+`'01/31/1956'`
+
+'PLUTO 👏 IS 👏 A 👏 PLANET!'
+
+We call `.format()` on a "format string", where the Python values we want to insert are represented with `{}` placeholders.
+
+Notice how we didn't even have to call str() to convert position from an int. format() takes care of that for us.
+
+If that was all that format() did, it would still be incredibly useful. But as it turns out, it can do a lot more. Here's just a taste:
+```python
+pluto_mass = 1.303 * 10**22
+earth_mass = 5.9722 * 10**24
+population = 52910390
+#         2 decimal points   3 decimal points, format as percent     separate with commas
+"{} weighs about {:.2} kilograms ({:.3%} of Earth's mass). It is home to {:,} Plutonians.".format(
+    planet, pluto_mass, pluto_mass / earth_mass, population,
+)
+```
+output : `"Pluto weighs about 1.3e+22 kilograms (0.218% of Earth's mass). It is home to 52,910,390 Plutonians."`
+
+```python
+# Referring to format() arguments by index, starting from 0
+s = """Pluto's a {0}.
+No, it's a {1}.
+{0}!
+{1}!""".format('planet', 'dwarf planet')
+print(s)
+```
+output : `Pluto's a planet.
+No, it's a dwarf planet.
+planet!
+dwarf planet!`
+
+### Dictionaries
+Dictionaries are a built-in Python data structure for mapping keys to values.
+```python
+numbers = {'one':1, 'two':2, 'three':3}
+```
+In this case 'one', 'two', and 'three' are the keys, and 1, 2 and 3 are their corresponding values.
+
+Values are accessed via square bracket syntax similar to indexing into lists and strings.
+
+Python has dictionary comprehensions with a syntax similar to the list comprehensions we saw in the previous tutorial.
+
+```python
+planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+planet_to_initial = {planet: planet[0] for planet in planets}
+planet_to_initial
+```
+output : 
+`{'Mercury': 'M',
+ 'Venus': 'V',
+ 'Earth': 'E',
+ 'Mars': 'M',
+ 'Jupiter': 'J',
+ 'Saturn': 'S',
+ 'Uranus': 'U',
+ 'Neptune': 'N'}`
+
+The in operator tells us whether something is a key in the dictionary
+
+The very useful dict.items() method lets us iterate over the keys and values of a dictionary simultaneously. (In Python jargon, an item refers to a key, value pair)
+
+```python
+for planet, initial in planet_to_initial.items():
+    print("{} begins with \"{}\"".format(planet.rjust(10), initial))
+```
+`   Mercury begins with "M" 
+     Venus begins with "V"
+     Earth begins with "E"
+      Mars begins with "M"
+   Jupiter begins with "J"
+    Saturn begins with "S"
+    Uranus begins with "U"
+   Neptune begins with "N"`
+
+**Enumerate() in Python**
+
+Often, when dealing with iterators, we also get need to keep a count of iterations. Python eases the programmers’ task by providing a built-in function enumerate() for this task. `Enumerate()` method adds a counter to an iterable and returns it in a form of enumerating object. This enumerated object can then be used directly for loops or converted into a list of tuples using the list() function.
+```python
+# Python program to illustrate
+# enumerate function
+l1 = ["eat", "sleep", "repeat"]
+s1 = "geek"
+  
+# creating enumerate objects
+obj1 = enumerate(l1)
+obj2 = enumerate(s1)
+  
+print ("Return type:", type(obj1))
+print (list(enumerate(l1)))
+  
+# changing start index to 2 from 0
+print (list(enumerate(s1, 2)))
+```
+output : `[(0, 'eat'), (1, 'sleep'), (2, 'repeat')]
+[(2, 'g'), (3, 'e'), (4, 'e'), (5, 'k')]`
+
+## 7. Working with external libraries
+
+### Imports
+
+So far we've talked about types and functions which are built-in to the language.
+
+But one of the best things about Python (especially if you're a data scientist) is the vast number of high-quality custom libraries that have been written for it.
+
+A module is just a collection of variables (a namespace, if you like) defined by someone else. We can see all the names in math using the built-in function `dir()`.
+
+import * makes all the module's variables directly accessible to you (without any dotted prefix).
+
+```python
+from math import *
+print(pi, log(32, 2))
+```
+```python
+from math import *
+from numpy import *
+print(pi, log(32, 2))
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+/tmp/ipykernel_19/3018510453.py in <module>
+      1 from math import *
+      2 from numpy import *
+----> 3 print(pi, log(32, 2))
+
+TypeError: return arrays must be of ArrayType
+
+```
+
+
+What has happened? It worked before!
+
+These kinds of "star imports" can occasionally lead to weird, difficult-to-debug situations.
+
+The problem in this case is that the math and numpy modules both have functions called log, but they have different semantics. Because we import from numpy second, its log overwrites (or "shadows") the log variable we imported from math.
+
+A good compromise is to import only the specific things we'll need from each module:
+
+```python
+from math import log, pi
+from numpy import asarray
+```
+
+### Submodules
+
+We've seen that modules contain variables which can refer to functions or values. Something to be aware of is that they can also have variables referring to other modules.
+
+```python
+import numpy
+print("numpy.random is a", type(numpy.random))
+print("it contains names such as...",
+      dir(numpy.random)[-15:]
+     )
+```
+`numpy.random is a <class 'module'>
+it contains names such as... ['seed', 'set_state', 'shuffle', 'standard_cauchy', 'standard_exponential', 'standard_gamma', 'standard_normal', 'standard_t', 'test', 'triangular', 'uniform', 'vonmises', 'wald', 'weibull', 'zipf']`
+
+
+**So if we import numpy as above,** then calling a function in the random "submodule" will require two dots
+
+```python
+# Roll 10 dice
+rolls = numpy.random.randint(low=1, high=6, size=10)
+rolls
+```
+
+### Three tools for understanding strange objects
+
+In the cell above, we saw that calling a numpy function gave us an "array". We've never seen anything like this before (not in this course anyways). But don't panic: we have three familiar builtin functions to help us here.
+
+1. type()
+2. dir()
+3. help()
+
+### Operator overloading
+
+We might think that Python strictly polices how pieces of its core syntax behave such as +, <, in, ==, or square brackets for indexing and slicing. But in fact, it takes a very hands-off approach. When you define a new type, you can choose how addition works for it, or what it means for an object of that type to be equal to something else.
+
+The designers of lists decided that adding them to numbers wasn't allowed. The designers of numpy arrays went a different way (adding the number to each element of the array).
+
+```python
+xlist = [[1,2,3],[2,4,6],]
+# Create a 2-dimensional array
+x = numpy.asarray(xlist)
+print("xlist = {}\nx =\n{}".format(xlist, x))
+```
+output : 
+
+```
+xlist = [[1, 2, 3], [2, 4, 6]]
+x =
+[[1 2 3]
+ [2 4 6]]
+
+```
+numpy's ndarray type is specialized for working with multi-dimensional data, so it defines its own logic for indexing, allowing us to index by a tuple to specify the index at each dimension.
