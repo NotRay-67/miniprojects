@@ -10,4 +10,16 @@ curretly working on foundations
 ## 2. Kaggle
 this folder contains the course notes, assignments and projects taken in [Kaggle](https://www.kaggle.com/)
 
-currently learning the python tutorials
+you can follow my account [here](https://www.kaggle.com/shreyas67)
+
+to finish
+- [x] ~~Python~~ (completed)
+- [ ] Intro to Machine Learning
+- [ ] Intermediate Machine Learning
+- [ ] Data Visualization
+- [ ] Intro to SQL
+- [ ] Advancd SQL
+- [ ] Intro to Deep Learning
+
+
+

@@ -420,3 +420,5 @@ x =
 
 ```
 numpy's ndarray type is specialized for working with multi-dimensional data, so it defines its own logic for indexing, allowing us to index by a tuple to specify the index at each dimension.
+
+with this i have finished my course on python with [kaggle](https://www.kaggle.com/learn/python)
