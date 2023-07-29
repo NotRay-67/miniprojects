@@ -7,6 +7,17 @@ this folder contains all the projects, assignments, notes taken in [theOdinProje
 
 curretly working on foundations
 
+to finish
+- [ ] Foundations 
+  - [x] ~~Introduction~~ (completed)
+  - [x] ~~Prerequisites~~ (completed)
+  - [x] ~~Git Basics~~ (completed)
+  - [ ] HTML Foundations 
+  - [ ] CSS Foundations 
+  - [ ] Flexbox
+  - [ ] JavaScript Basics
+  - [ ] Conclusion 
+
 ## 2. Kaggle
 this folder contains the course notes, assignments and projects taken in [Kaggle](https://www.kaggle.com/)
 
