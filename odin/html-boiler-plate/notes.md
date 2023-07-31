@@ -51,3 +51,5 @@ unordered list inside ordered list
   <li>third item</li>
 </ol>
 ```
+
+for seeing more on list check [this](https://learn.shayhowe.com/html-css/creating-lists/)
