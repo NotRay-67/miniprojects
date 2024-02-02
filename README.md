@@ -32,5 +32,18 @@ to finish
 - [ ] Advancd SQL
 - [ ] Intro to Deep Learning
 
+## 3. Coursera
+this folder contains the course notes, assignments and projects taken in [Coursera](https://www.coursera.org/)
 
+to finish
+- [ ] Machine learning Specialization by Andrew NG
+  - [ ] Supervised Machine Learning
+  - [ ] Advanced Learning Algorithms
+  - [ ] Unsupervised Learning, Recommenders, Reinforcement Learning
 
+- [ ] Deep Learning Specialization by Andrew NG
+  - [ ] Neural Networks and Deep Learning
+  - [ ] Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
+  - [ ] Structuring Machine Learning Projects
+  - [ ] Convolutional Neural Networks
+  - [ ] Sequence Models
