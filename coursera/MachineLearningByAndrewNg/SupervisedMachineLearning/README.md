@@ -28,8 +28,8 @@ Ex: Google News
 See the example below this is news content about pandas.
 when we choose this news we can see similar news with keywords which was not labeled, It just predicted on it's own.
 
-![](/other/images/SupervisedML(1).png)
+<img src="/other/images/SupervisedML(1).png" width = 400 >
 
 The machine see the pattern and clusters the news from the unlabelled news and show the recommedation.
 
-![](/other/imagesSupervisedML(2).png)
+<img src="/other/images/SupervisedML(2).png" width = 400 >
