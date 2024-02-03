@@ -1,8 +1,8 @@
-# Supervise Machine Learning 
+# Supervised Machine Learning 
 
-Course:[Supervised Machine Learning](https://www.coursera.org/learn/machine-learning)
+Course: [Supervised Machine Learning](https://www.coursera.org/learn/machine-learning)
 
-## Supervised vs Unsupervised machine learning
+## Supervised vs Unsupervised Machine Learning
 
    **Machine Learning** *is a field of study that gives computers the ability to learn without being explicitly programmed.* 
                                         ***~by Arthur Samuel(1959)***
@@ -22,9 +22,12 @@ There is no labels given, the purpose is to find something intresting (patterns 
 
 **Applications:**
 
-Clustering :- Google News, DNA microarray
+Clustering :- Groups similar data points.
+Anomaly Detection :- find unusual data points.
+Dimensionality Reduction :- compress data using fewer numbers
 
-Ex: Google News 
+
+Example for Clustering : Google News, DNA microarray 
 See the example below this is news content about pandas.
 when we choose this news we can see similar news with keywords which was not labeled, It just predicted on it's own.
 
@@ -33,3 +36,5 @@ when we choose this news we can see similar news with keywords which was not lab
 The machine see the pattern and clusters the news from the unlabelled news and show the recommedation.
 
 <img src="/other/images/SupervisedML(2).png" width = 400 >
+
+  
