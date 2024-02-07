@@ -37,4 +37,29 @@ The machine see the pattern and clusters the news from the unlabelled news and s
 
 <img src="/other/images/SupervisedML(2).png" width = 400 >
 
-  
+## Regression Model
+
+### Linear Regression model
+
+`Classification model predicts categories`
+
+`Regression model predicts numbers`
+
+Terminology that is used to talk about machine learning concepts.
+
+
+|Term          |Meaning                        |Notation|
+|--------------|:-----------------------------:|-------:|
+|Training set|Data used to train the model.|x(input feature) y(output or target feature)|
+|Testing set  |                               |     |
+
+<img src="/other/images/LinearRegression(1).png" width = 400 >
+
+   f<sub>wb</sub>(x) = wx + b 
+
+ Linear Regression for single Variable
+
+
+### Cost Function Formulae
+
+`Cost Function` :- 
